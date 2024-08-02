@@ -10,6 +10,13 @@
     <height>518</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Rubik</family>
+    <pointsize>16</pointsize>
+    <fontweight>DemiBold</fontweight>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Calculator</string>
   </property>
