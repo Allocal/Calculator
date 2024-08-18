@@ -9,16 +9,17 @@
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+                            QMetaObject, QObject, QPoint, QRect,
+                            QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+                           QFont, QFontDatabase, QGradient, QIcon,
+                           QImage, QKeySequence, QLinearGradient, QPainter,
+                           QPalette, QPixmap, QRadialGradient, QTransform, QShortcut)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QVBoxLayout,
-    QWidget)
+                               QMainWindow, QPushButton, QSizePolicy, QVBoxLayout,
+                               QWidget)
 import files_rc
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,25 +30,25 @@ class Ui_MainWindow(object):
         icon.addFile(u":/icons/Icons/calculator_24dp.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"QWidget {\n"
-"    color: white;\n"
-"    background-color: #121212;\n"
-"    font-family: Rubik;\n"
-"    font-size: 16pt;\n"
-"    font-weight: 600;\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #666\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background-color: #888\n"
-"}")
+                                 "    color: white;\n"
+                                 "    background-color: #121212;\n"
+                                 "    font-family: Rubik;\n"
+                                 "    font-size: 16pt;\n"
+                                 "    font-weight: 600;\n"
+                                 "}\n"
+                                 "\n"
+                                 "QPushButton{\n"
+                                 "	background-color: transparent;\n"
+                                 "	border: none;\n"
+                                 "}\n"
+                                 "\n"
+                                 "QPushButton:hover {\n"
+                                 "	background-color: #666\n"
+                                 "}\n"
+                                 "\n"
+                                 "QPushButton:pressed {\n"
+                                 "	background-color: #888\n"
+                                 "}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -60,7 +61,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.lbl_temp.sizePolicy().hasHeightForWidth())
         self.lbl_temp.setSizePolicy(sizePolicy)
         self.lbl_temp.setStyleSheet(u"color: #888;")
-        self.lbl_temp.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.lbl_temp.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
 
         self.verticalLayout.addWidget(self.lbl_temp)
 
@@ -72,9 +74,10 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.le_entery.sizePolicy().hasHeightForWidth())
         self.le_entery.setSizePolicy(sizePolicy1)
         self.le_entery.setStyleSheet(u"font-size: 40pt;\n"
-"border:none;")
-        self.le_entery.setMaxLength(20)
-        self.le_entery.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+                                     "border:none;")
+        self.le_entery.setMaxLength(16)
+        self.le_entery.setAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTrailing | Qt.AlignmentFlag.AlignVCenter)
         self.le_entery.setReadOnly(True)
 
         self.verticalLayout.addWidget(self.le_entery)
@@ -248,7 +251,6 @@ class Ui_MainWindow(object):
 
         self.layout_buttons.addWidget(self.Button_7, 2, 0, 1, 1)
 
-
         self.verticalLayout.addLayout(self.layout_buttons)
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -256,6 +258,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -265,70 +268,69 @@ class Ui_MainWindow(object):
         self.Button_CE.setText(QCoreApplication.translate("MainWindow", u"CE", None))
         self.Button_ChangeSine.setText(QCoreApplication.translate("MainWindow", u"+/-", None))
         self.Button_Result.setText(QCoreApplication.translate("MainWindow", u"=", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Result.setShortcut(QCoreApplication.translate("MainWindow", u"=", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_3.setShortcut(QCoreApplication.translate("MainWindow", u"3", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_9.setShortcut(QCoreApplication.translate("MainWindow", u"9", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_Decimal.setText(QCoreApplication.translate("MainWindow", u".", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Decimal.setShortcut(QCoreApplication.translate("MainWindow", u".", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_4.setShortcut(QCoreApplication.translate("MainWindow", u"4", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_1.setShortcut(QCoreApplication.translate("MainWindow", u"1", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_2.setShortcut(QCoreApplication.translate("MainWindow", u"2", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_6.setShortcut(QCoreApplication.translate("MainWindow", u"6", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_Backspace.setText("")
         self.Button_Divide.setText(QCoreApplication.translate("MainWindow", u"/", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Divide.setShortcut(QCoreApplication.translate("MainWindow", u"/", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_Substract.setText(QCoreApplication.translate("MainWindow", u"-", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Substract.setShortcut(QCoreApplication.translate("MainWindow", u"-", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_C.setText(QCoreApplication.translate("MainWindow", u"C", None))
         self.Button_Add.setText(QCoreApplication.translate("MainWindow", u"+", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Add.setShortcut(QCoreApplication.translate("MainWindow", u"+", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_Multiple.setText(QCoreApplication.translate("MainWindow", u"*", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_Multiple.setShortcut(QCoreApplication.translate("MainWindow", u"*", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_5.setShortcut(QCoreApplication.translate("MainWindow", u"5", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_8.setShortcut(QCoreApplication.translate("MainWindow", u"8", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_0.setShortcut(QCoreApplication.translate("MainWindow", u"0", None))
-#endif // QT_CONFIG(shortcut)
+        # endif // QT_CONFIG(shortcut)
         self.Button_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
-#if QT_CONFIG(shortcut)
+        # if QT_CONFIG(shortcut)
         self.Button_7.setShortcut(QCoreApplication.translate("MainWindow", u"7", None))
-#endif // QT_CONFIG(shortcut)
-    # retranslateUi
-
+# endif // QT_CONFIG(shortcut)
+# retranslateUi
